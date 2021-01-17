@@ -5,3 +5,5 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activated', (event) => {
   console.log(event, 'ACTIVATED');
 });
+
+console.log('worker');

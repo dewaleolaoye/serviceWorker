@@ -5,33 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Service Worker</title>
   </head>
-  <output></output>
   <body>
+    <p></p>
     <h1>Service Worker</h1>
-
+    <script src="serviceWorker.js"></script>
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker
-          .register('serviceWorker', { scope: '/' })
+          .register('serviceWorker.js')
           .then((registration) => {
             console.log(registration, 'SW Registration');
 
-            document.querySelector('output').innerHTML =
+            document.querySelector('p').innerHTML =
               'Service worker registered properly';
           })
           .catch((error) => {
             console.log(error, 'ERROR');
 
-            document.querySelector('output').innerHTML =
+            document.querySelector('p').innerHTML =
               'Service worker NOT registered properly';
           });
       } else {
         console.log('SW NOT supported');
 
-        document.querySelector('output').innerHTML =
-          'Service worker NOT SUPPORTED';
+        document.querySelector('p').innerHTML = 'Service worker NOT SUPPORTED';
       }
     </script>
-    <script src="/serviceWorker.js"></script>
   </body>
 </html>
